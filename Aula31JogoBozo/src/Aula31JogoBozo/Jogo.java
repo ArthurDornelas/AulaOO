@@ -6,6 +6,7 @@
 package Aula31JogoBozo;
 
 import Aula31JogoBozo.Jogador;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -16,8 +17,7 @@ import java.util.Scanner;
 public class Jogo {
     
     private int numJogadores;
-    Jogador jogadores[] = new Jogador[numJogadores];
-    int ordemJogadas[] = new int [numJogadores];
+    private ArrayList <Jogador> jogadores = new ArrayList();
     Scanner scan = new Scanner(System.in);
     Random rand = new Random();
     
@@ -27,36 +27,52 @@ public class Jogo {
     
     public void Jogadores(){
         
-        for(int i=0 ; i < jogadores.length ; i++)
+        for(int i = 0 ; i<numJogadores ; i++)
         {
-            jogadores[i] = new Jogador(scan.nextLine());
+            jogador = new Jogador(scan.nextLine());
         }
     }
-    
-    public void ordemJogadas(){
-        
-        for(int i=0 ; i < ordemJogadas.length ; i++)
-        {
-            Random rand = new Random();
-            int n = rand.nextInt(numJogadores-1) + 0;
-            
-            ordemJogadas[i] = n;
-        }
-        
-    }
-     
-    
-    
     
     
     public void iniciarJogo(){
         
-        for(int i=0 ; i < ordemJogadas.length ; i++)
-        {
-            int n = rand.nextInt(6) + 1;
-            jogadores[ordemJogadas[i]];
-            
-        }    
+        for(int i=0; i<10 ; i++){
+        
+          for(Jogador jogador: jogadores)
+          {
+              int j=0;
+              while(  j < 3 ){
+                  
+                  if(j==0) {
+                        jogador.lancaDados();
+                        j++;
+                  }  
+                  System.out.println("Quantos dados e qual voce quer jogar novamente?");
+                  int numDados = scan.nextInt();
+                  
+                  if(numDados != 0){
+                     
+                     for(int k = 0 ; k<numDados ; k++){ 
+                        
+                        int trocaDado = scan.nextInt();
+                        jogador.escolheDado(trocaDado);
+                     
+                     } 
+                    j++;    
+                  }
+                  else 
+                      j = 3;
+              }
+              
+              jogador.escolhePosicao();
+              
+              
+             
+           
+          }    
+        
+        }
+        
         
     }    
     

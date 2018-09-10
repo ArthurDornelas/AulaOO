@@ -11,15 +11,36 @@ package Aula31JogoBozo;
  */
 public class Tabuleiro {
     
-    int pontPosicao [] = {1 , 2 , 3 , 4 , 5 , 6 , 20 , 30 , 40 , 50};
-
-    public Tabuleiro() {}
+    private int pontPosicao [] = {1 , 2 , 3 , 4 , 5 , 6 , 20 , 30 , 40 , 50};
+    private int tabuleiro[] = new int[10];
     
-    public void exibePlacar(){
+    
+    public Tabuleiro() {
+        
+        for(int i=0 ; i< tabuleiro.length ; i++){
+            tabuleiro[i]= -1;
+        }
         
     }
     
-    public void calcularPontuacao(){
+    public void exibeTabuleiro(){
+        
+        
+        System.out.println(tabuleiro[0] + "  |  " + tabuleiro[3] + "  |  " + tabuleiro[6]);
+        System.out.println(" __  __  __ " );
+        System.out.println(tabuleiro[1] + "  |  " + tabuleiro[4] + "  |  " + tabuleiro[7]);
+        System.out.println(" __  __  __ " );
+        System.out.println( "  |  " + tabuleiro[8] + "  |  ");
+    }
+    
+    
+    
+    public void calcularPontuacao(int posicao, Dado []dados){
+        
+        
+        
+        
+        
         
     }
     

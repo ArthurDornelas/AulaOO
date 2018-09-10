@@ -15,19 +15,17 @@ public class Dado {
     
     private int numFaces = 6;
     private int faces[] = {1,2,3,4,5,6};
-    private int dados[] = new int [5];
     
     public int rolar(){
+        
         Random rand = new Random();
         int n = rand.nextInt(numFaces) + 1;
-        
+        return n;
         
     }
     
-    public int calcularPontuacao(int face, int numRepeticoes){
-        
-        
-      return n;
+    public void exibirFace(int n){
+        System.out.println(n + "  ");
     }
     
 }
