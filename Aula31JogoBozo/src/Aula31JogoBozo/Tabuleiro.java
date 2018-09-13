@@ -35,13 +35,20 @@ public class Tabuleiro {
     
     
     
-    public void calcularPontuacao(int posicao, Dado []dados){
+    public void calcularPontuacao(int posicao, Dado[] dados){
         
-        
+        if(posicao == 0){
+            for(int i=0 ; i < dados.length ; i++){
+               if(dados[i] == 1)
+                   
+                   
+            }
+        }
         
         
         
         
     }
-    
+
+ 
 }

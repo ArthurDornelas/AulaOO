@@ -7,6 +7,7 @@ package Aula31JogoBozo;
 
 import Aula31JogoBozo.Dado;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -17,7 +18,9 @@ public class Jogador {
     private String nome;
     Tabuleiro tabuleiro = new Tabuleiro();
     private int numDados = 5;
+    private int jogada;
     Dado []dados = new Dado[numDados];
+    Scanner scan = new Scanner(System.in);
     
 
     public Jogador(String nome) {
@@ -44,9 +47,13 @@ public class Jogador {
         
         tabuleiro.exibeTabuleiro();
         System.out.println("Qual jogada voce quer fazer?");
-        System.out.println("0-AS  1-Duque ");        
+        System.out.println("0-AS  1-DUQUE  2-TERNO  3-QUADRA  4-QUINA  5-SENA  6-FU  7-SEGUIDA  8-QUADRADA  9-GENERAL");        
+        jogada = scan.nextInt();
         
-        
+    }
+
+    public void calculaPontos(){
+        tabuleiro.calcularPontuacao(jogada, dados);
     }
 
     

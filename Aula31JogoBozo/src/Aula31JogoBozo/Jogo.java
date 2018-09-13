@@ -29,8 +29,9 @@ public class Jogo {
         
         for(int i = 0 ; i<numJogadores ; i++)
         {
-            jogador = new Jogador(scan.nextLine());
+            jogadores.add ( new Jogador(scan.nextLine())); 
         }
+        
     }
     
     
@@ -46,7 +47,9 @@ public class Jogo {
                   if(j==0) {
                         jogador.lancaDados();
                         j++;
+                        jogador.escolhePosicao();
                   }  
+                 
                   System.out.println("Quantos dados e qual voce quer jogar novamente?");
                   int numDados = scan.nextInt();
                   
@@ -62,13 +65,13 @@ public class Jogo {
                   }
                   else 
                       j = 3;
-              }
+             }
+             jogador.calculaPontos();
               
-              jogador.escolhePosicao();
+              
               
               
              
-           
           }    
         
         }
