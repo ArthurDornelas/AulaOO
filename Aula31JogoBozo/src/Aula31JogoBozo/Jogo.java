@@ -21,7 +21,7 @@ public class Jogo {
     private ArrayList <Jogador> jogadores = new ArrayList();
     Scanner scan = new Scanner(System.in);
     Random rand = new Random();
-    private int pontFinal[] = new int[numJogadores];
+    private int pontFinal = 0;
     
     public Jogo(int numJogadores) {
         this.numJogadores = numJogadores;
@@ -29,6 +29,7 @@ public class Jogo {
     
     public void Jogadores(){
         
+        System.out.println("Digite o nome dos Jogadores:");
         for(int i = 0 ; i<numJogadores ; i++)
         {
             jogadores.add ( new Jogador(scan.nextLine())); 
@@ -76,19 +77,21 @@ public class Jogo {
           }
         }
         int i = 0;
+        int iFinal = 0;
         for(Jogador jogador: jogadores){
-            pontFinal[i] = jogador.calculaPontoTotal();
-            i++;
+            if(jogador.calculaPontoTotal() > pontFinal){
+                pontFinal = jogador.calculaPontoTotal();
+                iFinal++;
+            }
         }
         
-        Arrays.sort(pontFinal);
-        
-        System.out.println("");
-        
-        
+        for(Jogador jogador: jogadores){
+            if( i == iFinal)
+                System.out.println("O Jogador " + jogador.getNome() + " ganhou!");
+            else
+                i++;
+        }
         
     }    
-    
-    
     
 }

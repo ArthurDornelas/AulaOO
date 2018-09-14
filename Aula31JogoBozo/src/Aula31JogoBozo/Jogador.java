@@ -17,14 +17,18 @@ public class Jogador {
     
     private String nome;
     Tabuleiro tabuleiro = new Tabuleiro();
-    private int numDados = 5;
     private int jogada;
-    Dado []dados = new Dado[numDados];
+    //Dado []dados = new Dado[5];
+    private ArrayList <Dado> dados = new ArrayList();
     Scanner scan = new Scanner(System.in);
     
 
     public Jogador(String nome) {
         this.nome = nome;
+        for(int i = 0 ; i<5 ; i++)
+        {
+            dados.add(new Dado()); 
+        }
         
     }
     
@@ -34,16 +38,23 @@ public class Jogador {
     
     public void lancaDados(){
         
-        for(int i = 0 ; i<numDados ; i++){
-            int n = dados[i].rolar();
-            dados[i].exibirFace(n);
+        for(Dado dado : dados){
+            dado.rolar();
+            dado.exibirFace();
         }
     }
     
-    public void escolheDado(int dado){
+    public void escolheDado(int dadoMudar){
         
-        int n = dados[dado-1].rolar();
-        dados[dado-1].exibirFace(n);
+        int i = 0;
+        for(Dado dado : dados){
+            if(i == dadoMudar){
+               dado.rolar();
+                System.out.println("Sua Face Nova e:");
+               dado.exibirFace();
+            }
+             i++;
+        }    
         
     }
     

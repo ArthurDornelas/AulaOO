@@ -13,20 +13,23 @@ import java.util.Random;
  */
 public class Dado {
     
-    private int numFaces = 6;
-    private int faces[] = {1,2,3,4,5,6};
-    private int faceAtual;
+    private final int numFaces = 6;
+    //private int faces[] = {1,2,3,4,5,6};
+    private int faceAtual=0;
+
+    public Dado() {
+    }
     
-    public int rolar(){
+    
+    public void rolar(){
         
         Random rand = new Random();
         faceAtual = rand.nextInt(numFaces) + 1;
-        return faceAtual;
         
     }
     
-    public void exibirFace(int n){
-        System.out.println(n + "  ");
+    public void exibirFace(){
+        System.out.println(faceAtual + "  ");
     }
     
     public int getFace(){
