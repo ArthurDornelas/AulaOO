@@ -28,6 +28,10 @@ public class Jogador {
         
     }
     
+    public String getNome(){
+        return nome;
+    }
+    
     public void lancaDados(){
         
         for(int i = 0 ; i<numDados ; i++){
@@ -55,6 +59,9 @@ public class Jogador {
     public void calculaPontos(){
         tabuleiro.calcularPontuacao(jogada, dados);
     }
-
+    
+    public int calculaPontoTotal(){
+        return tabuleiro.calculaPontoPorJogador();
+    }
     
 }

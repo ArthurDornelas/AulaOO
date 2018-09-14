@@ -15,12 +15,13 @@ public class Dado {
     
     private int numFaces = 6;
     private int faces[] = {1,2,3,4,5,6};
+    private int faceAtual;
     
     public int rolar(){
         
         Random rand = new Random();
-        int n = rand.nextInt(numFaces) + 1;
-        return n;
+        faceAtual = rand.nextInt(numFaces) + 1;
+        return faceAtual;
         
     }
     
@@ -28,6 +29,8 @@ public class Dado {
         System.out.println(n + "  ");
     }
     
-    public void getFace
+    public int getFace(){
+        return faceAtual;
+    }
     
 }

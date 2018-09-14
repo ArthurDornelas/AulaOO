@@ -7,6 +7,7 @@ package Aula31JogoBozo;
 
 import Aula31JogoBozo.Jogador;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -20,6 +21,7 @@ public class Jogo {
     private ArrayList <Jogador> jogadores = new ArrayList();
     Scanner scan = new Scanner(System.in);
     Random rand = new Random();
+    private int pontFinal[] = new int[numJogadores];
     
     public Jogo(int numJogadores) {
         this.numJogadores = numJogadores;
@@ -37,14 +39,18 @@ public class Jogo {
     
     public void iniciarJogo(){
         
+        System.out.println("-------------------- JOGO BOZO ---------------------");
+        
         for(int i=0; i<10 ; i++){
         
           for(Jogador jogador: jogadores)
           {
+              System.out.println("Vez do jogador: " + jogador.getNome());
               int j=0;
               while(  j < 3 ){
                   
                   if(j==0) {
+                        System.out.println("Os seus dados sao:");
                         jogador.lancaDados();
                         j++;
                         jogador.escolhePosicao();
@@ -67,14 +73,18 @@ public class Jogo {
                       j = 3;
              }
              jogador.calculaPontos();
-              
-              
-              
-              
-             
-          }    
-        
+          }
         }
+        int i = 0;
+        for(Jogador jogador: jogadores){
+            pontFinal[i] = jogador.calculaPontoTotal();
+            i++;
+        }
+        
+        Arrays.sort(pontFinal);
+        
+        System.out.println("");
+        
         
         
     }    
