@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author ice
+ * @author ArthurDornelas
  */
 public class Jogo {
     
@@ -42,7 +42,7 @@ public class Jogo {
         
         System.out.println("-------------------- JOGO BOZO ---------------------");
         
-        for(int i=0; i<10 ; i++){
+        for(int i=0; i<3 ; i++){
         
           for(Jogador jogador: jogadores)
           {
@@ -57,13 +57,14 @@ public class Jogo {
                         jogador.escolhePosicao();
                   }  
                  
-                  System.out.println("Quantos dados e qual voce quer jogar novamente?");
+                  System.out.println("Quantos dados voce que trocar?");
                   int numDados = scan.nextInt();
                   
                   if(numDados != 0){
                      
                      for(int k = 0 ; k<numDados ; k++){ 
                         
+                        System.out.println("Qual dado quer jogar novamente?");
                         int trocaDado = scan.nextInt();
                         jogador.escolheDado(trocaDado);
                      
