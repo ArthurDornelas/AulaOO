@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 /**
  *
- * @author ice
+ * @author ArthurDornelas
  */
 public class Tabuleiro {
     
@@ -28,14 +28,16 @@ public class Tabuleiro {
     
     public void exibeTabuleiro(){
         
-        
+        System.out.println("\n");
+        System.out.println("Seu tableiro e:\n");
         System.out.println(tabuleiro[0] + "  |  " + tabuleiro[3] + "  |  " + tabuleiro[6]);
-        System.out.println(" __  __  __ " );
+        System.out.println("__    __    __ " );
         System.out.println(tabuleiro[1] + "  |  " + tabuleiro[4] + "  |  " + tabuleiro[7]);
-        System.out.println(" __  __  __ " );
+        System.out.println("__    __    __ " );
         System.out.println(tabuleiro[2] + "  |  " + tabuleiro[5] + "  |  " + tabuleiro[8]);
-        System.out.println(" __  __  __ " );
-        System.out.println( "   |  " + tabuleiro[9] + "   |  ");
+        System.out.println("__    __    __ " );
+        System.out.println( "   |  " + tabuleiro[9] + "  |  ");
+        System.out.println("\n");
     }
     
     
