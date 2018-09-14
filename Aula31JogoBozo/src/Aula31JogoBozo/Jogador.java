@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author ice
+ * @author ArthurDornelas
  */
 public class Jogador {
     
@@ -48,10 +48,11 @@ public class Jogador {
         
         int i = 0;
         for(Dado dado : dados){
-            if(i == dadoMudar){
+            if(i == dadoMudar-1){
                dado.rolar();
-                System.out.println("Sua Face Nova e:");
-               dado.exibirFace();
+                System.out.println("\nSua Face Nova e:");
+                dado.exibirFace();
+                System.out.println("\n");
             }
              i++;
         }    
